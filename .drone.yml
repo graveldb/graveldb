@@ -1,0 +1,11 @@
+kind: pipeline
+type: kubernetes
+name: default
+
+steps:
+- name: testing
+  image: quay.io/ankitrgadiya/golang:latest
+  commands:
+  - go test ./...
+  - golangci-lint run ./...
+
